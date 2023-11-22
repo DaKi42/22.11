@@ -1,0 +1,70 @@
+@main-color: #3498db;
+@dark-blue: #001f3f;
+@light-blue: #0074a4;
+
+.setColor(@color) {
+  background-color: @color;
+}
+
+.setTextColor(@color) {
+  color: @color;
+}
+
+.image-block {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+.setPadding(@padding) {
+  padding: @padding;
+}
+
+
+.setWidth(@width) {
+  width: @width;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+header, footer {
+  .setColor(@dark-blue);
+  .setTextColor(#fff);
+  .setPadding(20px);
+}
+
+
+main {
+  display: flex;
+  flex: 1;
+  .setColor(@main-color);
+  .setTextColor(#333);
+  .setPadding(20px);
+
+  
+  .sidebar {
+    .setWidth(20%);
+    .setColor(darken(@main-color, 10%)); 
+    .setPadding(20px);
+  }
+
+  
+  .image-block {
+    .setWidth(80%);
+    margin-left: 20px;
+    .setPadding(10px);
+  }
+}
+
+
